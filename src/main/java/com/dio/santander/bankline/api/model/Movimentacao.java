@@ -1,7 +1,17 @@
 package com.dio.santander.bankline.api.model;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "tab_movimentacao")
@@ -32,6 +42,7 @@ public class Movimentacao {
         this.id = id;
     }
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 
     public LocalDateTime getDataHora() {
         return dataHora;
     }
