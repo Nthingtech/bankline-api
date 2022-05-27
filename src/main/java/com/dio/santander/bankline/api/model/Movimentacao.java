@@ -20,7 +20,8 @@ public class Movimentacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(name = "data_hora")
     private LocalDateTime dataHora;
 
@@ -42,7 +43,7 @@ public class Movimentacao {
         this.id = id;
     }
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss") 
+    
     public LocalDateTime getDataHora() {
         return dataHora;
     }
